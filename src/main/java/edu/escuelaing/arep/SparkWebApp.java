@@ -7,7 +7,7 @@ import spark.QueryParamsMap;
 public class SparkWebApp {
     public static void main(String[] args) {
         port(getPort());
-        post("/media", (req, res) ->{
+        post("media", (req, res) ->{
             QueryParamsMap map = req.queryMap();
             String[] nums = map.get("numeros").value().split("\n");
             LinkedList linkedList = new LinkedList();
@@ -17,7 +17,7 @@ public class SparkWebApp {
             return calcularMedia(linkedList);
         });
 
-        post("/desviacion", (req, res) -> {
+        post("desviacion", (req, res) -> {
             QueryParamsMap map = req.queryMap();
             String[] nums = map.get("numeros").value().split("\n");
             LinkedList linkedList = new LinkedList();
