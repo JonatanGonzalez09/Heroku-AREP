@@ -11,6 +11,7 @@ Al ejecutar el comando ```mvn test``` se podrá ver la ejecución de las pruebas
 
 ## Construido con ##
 [Maven](https://maven.apache.org/): Para la gestión de dependencias.
+
 [Spark](http://sparkjava.com/): Para la gestion de la parte de aplicacion Web.
 
 ## Modelo ##
@@ -29,7 +30,7 @@ Para generar la documentacion javadoc, fue necesario ejecutar los siguientes com
 - mvn javadoc:test-aggregate
 - mvn javadoc:test-aggregate-jar
 ```
-La ruta donde encontrara la documentacion es la siguiente: **target\site\apidocs\edu\escuelaing\app**
+La ruta donde encontrara la documentacion es la siguiente: **target\site\apidocs\edu\escuelaing\arep\designprimer**
 
 ## Descripción del diseño ##
 En el siguiente vinculo encontrara el respectivo PDF de la descripción del diseño desarrollado en LaTeX.
