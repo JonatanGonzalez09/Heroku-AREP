@@ -1,32 +1,13 @@
-package edu.escuelaing.arep;
+package edu.escuelaing.arep.designprimer;
 
-import static spark.Spark.*;
-
-import spark.QueryParamsMap;
-
-public class SparkWebApp {
-    public static void main(String[] args) {
-        port(getPort());
-        post("media", (req, res) ->{
-            QueryParamsMap map = req.queryMap();
-            String[] nums = map.get("numeros").value().split("\n");
-            LinkedList linkedList = new LinkedList();
-            for (String num : nums){
-                linkedList.add(1, new Nodo(Integer.parseInt(num)));
-            }
-            return calcularMedia(linkedList);
-        });
-
-        post("desviacion", (req, res) -> {
-            QueryParamsMap map = req.queryMap();
-            String[] nums = map.get("numeros").value().split("\n");
-            LinkedList linkedList = new LinkedList();
-            for (String num : nums){
-                linkedList.add(1, new Nodo(Integer.parseInt(num)));
-            }
-            double media = calcularMedia(linkedList);
-            return calcularDesviacion(linkedList, media);
-        });
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args ){
+        System.out.println( "Hello World!" );
     }
 
     /**
@@ -70,10 +51,4 @@ public class SparkWebApp {
         return Math.pow(sDeviation/size, 0.5);
     }
 
-    static int getPort(){
-        if (System.getenv("PORT") != null){
-            return Integer.parseInt(System.getenv("PORT"));
-        }
-        return 4567; //returns default port if heroku-port isn't set(i.e. on localhost)
-    }
 }
